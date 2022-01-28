@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MARTINController!{% endblock %}
+{% block title %} Bienvenue !{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,23 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1> Connectez-vous ! ✅</h1>
+    <form method="post" action="traitement.php">
+   <p>
+   <div class="form-group">
+       <label for="pseudo">Votre pseudo :</label>
+       <input type="text" class="form-control" name="pseudo" id="pseudo" />
+    </div>
+       
+       <br />
+    <div class="form-group">
+       <label for="pass">Votre mot de passe :</label>
+       <input type="password" class="form-control" name="pass" id="pass" />
+    </div>
+       
+   </p>
+   <input type="submit" class="btn btn-primary" value="Envoyer" />
+</form>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/etudrt/FServMartin/src/Controller/MARTINController.php'|file_link(0) }}">src/Controller/MARTINController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/etudrt/FServMartin/templates/martin/index.html.twig'|file_link(0) }}">templates/martin/index.html.twig</a></code></li>
-    </ul>
 </div>
 {% endblock %}
