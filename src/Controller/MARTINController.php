@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\Utilisateur;
 
 class MARTINController extends AbstractController
 {
@@ -21,7 +23,7 @@ class MARTINController extends AbstractController
     /**
      * @Route("/srv/login", name="login")
      */
-    public function login(Request $request): Response
+    public function login(Request $request,EntityManagerInterface $manager): Response
     {
         $login = $request->get("pseudo");
         $password = $request->request->get("pass");
