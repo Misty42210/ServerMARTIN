@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Bienvenue !{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1> Connectez-vous ! ✅</h1>
+    <form method="post" action="/creeruti">
+   <p>
+   <div class="form-group">
+       <label for="pseudo">Votre pseudo :</label>
+       <input type="text" class="form-control" name="pseudo" id="pseudo" />
+    </div>
+       
+       <br />
+    <div class="form-group">
+       <label for="pass">Votre mot de passe :</label>
+       <input type="password" class="form-control" name="pass" id="pass" />
+    </div>
+       
+   </p>
+   <input type="submit" class="btn btn-primary" value="Envoyer" />
+</form>
+
+</div>
+{% endblock %}
