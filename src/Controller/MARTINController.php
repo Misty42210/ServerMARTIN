@@ -78,7 +78,7 @@ class MARTINController extends AbstractController
         $reponse = $manager -> getRepository(Utilisateur :: class) -> findOneBy([ 'login' => $login]);
         if ($reponse==NULL)
             $message= "Vous n'etes pas present dans la base de donnees";
-        else
+        else{
             $code=$reponse -> getPassword();
             if (password_verify( $password, $code)){
                 $session -> set('stock_id_user',$reponse->getId());
@@ -87,6 +87,8 @@ class MARTINController extends AbstractController
             }
             else
                 $message = "pas le bon mot de passe";
+
+        }       
         return $this->render('martin/login.html.twig', [
             'login' =>$login,
             'password' =>$password,
